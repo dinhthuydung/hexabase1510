@@ -1,0 +1,29 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "chai": "^4.3.4",
+    "data-driven": "^1.4.0",
+    "fs": "0.0.1-security",
+    "img-diff-js": "^0.5.2",
+    "mocha": "^9.0.0",
+    "mocha-allure-reporter": "^1.4.0",
+    "node-xlsx": "^0.16.1",
+    "papaparse": "^5.3.1",
+    "playwright": "^1.12.2",
+    "playwright-core": "^1.12.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.12.2",
+    "mocha-junit-reporter": "^2.0.0",
+    "mochawesome": "^6.2.2"
+  },
+  "scripts": {
+    "test": "mocha --timeout 50000 --reporter mochawesome "
+  },
+  "author": "",
+  "license": "ISC"
+}

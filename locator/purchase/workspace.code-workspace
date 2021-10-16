@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\procure-c-e2e_Copy"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\Cypress"
+		},
+		{
+			"path": "..\\..\\e2e_NG"
+		}
+	],
+	"settings": {}
+}

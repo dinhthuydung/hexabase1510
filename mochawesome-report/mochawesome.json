@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-13T10:36:41.910Z",
+    "end": "2021-10-13T10:37:11.578Z",
+    "duration": 29668,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "16f27e39-0e17-4889-b0a6-96c6d397f704",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9ae992f8-2c81-4aa0-bfac-9c1722a21420",
+          "title": "V2_CREO_APL: 発注登録 / Order search : order/order_applied.js",
+          "fullFile": "E:\\procure-c-e2e\\test\\order\\order_admit_on_spot.js",
+          "file": "\\test\\order\\order_admit_on_spot.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"V2_CREO_APL: 発注登録 / Order search : order/order_applied.js\"",
+              "fullTitle": "V2_CREO_APL: 発注登録 / Order search : order/order_applied.js \"before each\" hook in \"V2_CREO_APL: 発注登録 / Order search : order/order_applied.js\"",
+              "timedOut": false,
+              "duration": 526,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const browser = await chromium.launch({\n    headless: false,\n    channel: 'chrome',\n    slowMo: 100\n})\npage = await browser.newPage({ ignoreHTTPSErrors: true })\n// await page.setViewportSize({ width: 1920, height: 1080 })\nawait order_search.login_pass_with_p3_email()",
+              "err": {},
+              "uuid": "b0ce7ba4-39da-48f5-8335-ceb96ae6b9c9",
+              "parentUUID": "9ae992f8-2c81-4aa0-bfac-9c1722a21420",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"V2_CREO_APL: 発注登録 / Order search : order/order_applied.js\"",
+              "fullTitle": "V2_CREO_APL: 発注登録 / Order search : order/order_applied.js \"after each\" hook in \"V2_CREO_APL: 発注登録 / Order search : order/order_applied.js\"",
+              "timedOut": false,
+              "duration": 150,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await page.close()",
+              "err": {},
+              "uuid": "a246f3fa-629b-426f-b013-185000c7dd58",
+              "parentUUID": "9ae992f8-2c81-4aa0-bfac-9c1722a21420",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "TC174: Check error mess when 発注予定日 < 発注申請日",
+              "fullTitle": "V2_CREO_APL: 発注登録 / Order search : order/order_applied.js TC174: Check error mess when 発注予定日 < 発注申請日",
+              "timedOut": false,
+              "duration": 28981,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await order_search.filter_status(locator.admit_on_spot)\nawait order_search.click_modify_button()\nawait order_detail.change_date_current_day()\nawait order_detail.change_schedule_date_to_past()\nlet display = await order_detail.get_text_scheduled_date_error_mess()\nif (display == constn.scheduled_date_after_app_date_mess.mess3){\n    await assert.strictEqual(display, constn.scheduled_date_after_app_date_mess.mess3, \"Don't show error mess: FAILED\")\n}\nawait console.log(\"Show error mess when  発注予定日 < 発注申請日 : PASSED\")",
+              "err": {},
+              "uuid": "a3cfc2d4-7cbe-4bef-aab0-16a344c816ba",
+              "parentUUID": "9ae992f8-2c81-4aa0-bfac-9c1722a21420",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a3cfc2d4-7cbe-4bef-aab0-16a344c816ba"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 28981,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 50000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 50000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.0.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
